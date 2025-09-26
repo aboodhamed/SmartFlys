@@ -6,7 +6,41 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<style>
+    .p-3{
+        color: #000000 !important;
+    }
+    .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #000000 !important;
+    }
+    
+    /* Force black color for all text elements */
+    .text-sm *,
+    .text-sm span,
+    .text-sm div,
+    .text-sm p {
+        color: #000000 !important;
+    }
+    
+    /* Override Tailwind classes */
+    .text-gray-500,
+    .text-gray-600,
+    .text-gray-700 {
+        color: #000000 !important;
+    }
+    
+    /* Force black color for all elements */
+    * {
+        color: #000000 !important;
+    }
+    
+    /* Override specific elements */
+    span, div, p, h1, h2, h3, h4, h5, h6 {
+        color: #000000 !important;
+    }
+</style>
 <div class="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100">
     <!-- Header -->
     <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-8 shadow-lg">
@@ -60,7 +94,7 @@
                             </div>
                         </div>
                         
-                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center p-3  rounded-lg">
                             <i class="fas fa-plane text-blue-500 text-xl mr-3"></i>
                             <div>
                                 <strong class="text-gray-700">Flight Number</strong>
@@ -150,32 +184,32 @@
                                     <option value="{{ $i }}C">{{ $i }}C</option>
                                 @endfor
                             </select>
-                            <p class="text-sm text-gray-500 mt-2">Seat availability will be confirmed</p>
+                            <p style="color: #000000;" class="text-sm text-black-500 mt-2">Seat availability will be confirmed</p>
                         </div>
 
                         <!-- Booking Summary -->
                         <div class="mb-6 p-4 bg-gray-50 rounded-lg">
-                            <h4 class="text-lg font-semibold text-gray-700 mb-3">Booking Summary</h4>
-                            <div class="space-y-2 text-sm">
-                                <div class="flex justify-between">
-                                    <span>Passenger:</span>
-                                    <span id="summaryPassenger" class="font-medium">-</span>
+                            <h4 class="text-lg font-semibold text-black mb-3">Booking Summary</h4>
+                            <div style="color: #000000;" class="space-y-2 text-sm text-black">
+                                <div style="color: #000000;" class="flex justify-between">
+                                    <span style="color: #000000;">Passenger:</span>
+                                    <span style="color: #000000;" id="summaryPassenger" class="font-medium">-</span>
                                 </div>
                                 <div class="flex justify-between">
-                                    <span>Seat:</span>
-                                    <span id="summarySeat" class="font-medium">-</span>
+                                    <span style="color: #000000;">Seat:</span>
+                                    <span style="color: #000000;" id="summarySeat" class="font-medium">-</span>
                                 </div>
                                 <div class="flex justify-between">
-                                    <span>Base Price:</span>
+                                    <span style="color: #000000;">Base Price:</span>
                                     <span>{{ $trip->price }} JOD</span>
                                 </div>
                                 <div class="flex justify-between text-green-600">
                                     <span>Discount (10%):</span>
-                                    <span>-{{ number_format($trip->price * 0.1, 2) }} JOD</span>
+                                    <span style="color: #000000;">-{{ number_format($trip->price * 0.1, 2) }} JOD</span>
                                 </div>
                                 <div class="flex justify-between border-t border-gray-200 pt-2 font-semibold">
-                                    <span>Total:</span>
-                                    <span>{{ number_format($trip->price * 0.9, 2) }} JOD</span>
+                                    <span style="color: #000000;"> Total:</span>
+                                    <span style="color: #000000;">{{ number_format($trip->price * 0.9, 2) }} JOD</span>
                                 </div>
                             </div>
                         </div>

@@ -8,6 +8,7 @@
   position: relative;
   overflow: hidden;
   gap: 0;
+  color: #2c3e50;
 }
 
 .smart-data-chat-container::before {
@@ -32,7 +33,7 @@
   min-height: 100vh;
   text-align: center;
   background: transparent;
-  color: var(--jordan-royal);
+  color: #2c3e50;
   padding: 40px 20px;
 }
 
@@ -290,6 +291,7 @@
 .message-text {
   line-height: 1.6;
   white-space: pre-wrap;
+  color: #2c3e50;
 }
 
 /* Typing Indicator */
@@ -297,7 +299,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #666;
+  color: #2c3e50;
   font-style: italic;
 }
 
@@ -456,7 +458,7 @@
   background: transparent;
   font-size: 16px;
   font-family: 'Tajawal', sans-serif;
-  color: #3c4043;
+  color: #2c3e50;
   outline: none;
 }
 
@@ -549,7 +551,7 @@
 }
 
 .data-info {
-  color: #666;
+  color: #2c3e50;
   font-size: 0.8rem;
 }
 

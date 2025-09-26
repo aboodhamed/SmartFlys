@@ -23,27 +23,36 @@
                 padding: 0;
             }
 
-            .chat-container {
-                max-width: 500px;
-                margin: 40px auto;
+            .smart-data-chat-container {
+                max-width: 800px;
+                margin: 20px auto;
                 background: #fff;
                 border-radius: 12px;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                height: 600px;
                 display: flex;
                 flex-direction: column;
-                height: 600px;
+            }
+
+            .chat-content {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
             }
 
             .chat-messages {
                 flex: 1;
-                padding: 16px;
+                padding: 20px;
                 overflow-y: auto;
+                background: #fafafa;
+                color: #333;
             }
 
             .message {
-                margin-bottom: 12px;
+                margin-bottom: 15px;
                 display: flex;
                 flex-direction: column;
+                color: #333;
             }
 
             .message.user {
@@ -55,10 +64,13 @@
             }
 
             .message-content {
-                background: #e0e0e0;
-                padding: 10px 14px;
+                background: #f8f9fa;
+                padding: 12px 16px;
                 border-radius: 12px;
                 max-width: 80%;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                color: #2c3e50 !important;
+                border: 1px solid #e9ecef;
             }
 
             .message.user .message-content {
@@ -68,24 +80,82 @@
 
             .message-header {
                 font-size: 12px;
-                color: #555;
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 4px;
+                color: #666;
+                margin-bottom: 6px;
+                font-weight: 500;
+            }
+
+            .message.ai .message-header {
+                color: #5a9a9c;
+            }
+
+            .message.ai .message-content {
+                color: #333 !important;
+            }
+
+            .message.ai .message-content div {
+                color: #333 !important;
+            }
+
+            .message.ai .message-content * {
+                color: #2c3e50 !important;
+            }
+
+            .message.ai .message-content p,
+            .message.ai .message-content span,
+            .message.ai .message-content div {
+                color: #2c3e50 !important;
+            }
+
+            .message-text {
+                color: #2c3e50 !important;
+            }
+
+            .message.ai .message-text {
+                color: #2c3e50 !important;
+            }
+
+            /* Force text color for all elements in AI messages */
+            .message.ai .message-content,
+            .message.ai .message-content *,
+            .message.ai .message-content div,
+            .message.ai .message-content span,
+            .message.ai .message-content p {
+                color: #2c3e50 !important;
+            }
+
+            /* Override any inherited white color */
+            .message.ai .message-content {
+                color: #2c3e50 !important;
+            }
+
+            /* Force visibility and color for all text in AI messages */
+            .message.ai .message-content {
+                color: #2c3e50 !important;
+                text-shadow: none !important;
+            }
+
+            .message.ai .message-content * {
+                color: #2c3e50 !important;
+                text-shadow: none !important;
+            }
+
+            .message.user .message-header {
+                color: rgba(255,255,255,0.8);
             }
 
             .typing-indicator {
-                display: none;
-                flex-direction: row;
+                display: flex;
                 align-items: center;
                 gap: 4px;
-                padding: 10px;
+                color: #2c3e50;
+                font-style: italic;
             }
 
             .typing-indicator span {
                 width: 6px;
                 height: 6px;
-                background: #555;
+                background: #5a9a9c;
                 border-radius: 50%;
                 animation: blink 1s infinite;
             }
@@ -99,56 +169,73 @@
             }
 
             .chat-input {
-                border-top: 1px solid #ddd;
-                padding: 10px;
+                border-top: 1px solid #e0e0e0;
+                padding: 20px;
+                background: #fff;
+            }
+
+            .input-container {
                 display: flex;
-                gap: 8px;
+                gap: 10px;
+                align-items: center;
             }
 
             .chat-input input {
                 flex: 1;
-                padding: 10px;
-                border-radius: 8px;
-                border: 1px solid #ccc;
+                padding: 12px 16px;
+                border: 2px solid #e0e0e0;
+                border-radius: 25px;
+                font-size: 14px;
+                outline: none;
+                transition: border-color 0.3s;
             }
 
-            .chat-input button {
-                padding: 0 16px;
+            .chat-input input:focus {
+                border-color: #5a9a9c;
+            }
+
+            .send-btn {
+                padding: 12px 16px;
                 border: none;
-                border-radius: 8px;
+                border-radius: 50%;
                 background: #5a9a9c;
                 color: #fff;
                 cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s;
+                width: 45px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
-            .quick-suggestions {
-                margin-top: 12px;
-                padding: 0 16px 16px 16px;
-            }
-
-            .quick-suggestions h4 {
-                margin: 0 0 6px 0;
-                font-size: 14px;
-                color: #333;
+            .send-btn:hover {
+                background: #4a8a8c;
             }
 
             .suggestions-grid {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 6px;
+                gap: 8px;
+                margin-top: 10px;
             }
 
             .suggestion-btn {
-                background: #f0f0f0;
-                border: none;
-                padding: 6px 10px;
-                border-radius: 6px;
+                background: #f8f9fa;
+                border: 1px solid #e0e0e0;
+                padding: 8px 12px;
+                border-radius: 20px;
                 cursor: pointer;
                 font-size: 13px;
+                color: #5a9a9c;
+                transition: all 0.3s;
             }
 
             .suggestion-btn:hover {
-                background: #ddd;
+                background: #5a9a9c;
+                color: #fff;
+                border-color: #5a9a9c;
             }
 
             .confidence-badge {
@@ -164,44 +251,49 @@
             #stats {
                 font-size: 12px;
                 text-align: center;
-                padding: 6px 0;
-                color: #555;
+                padding: 10px;
+                color: #666;
+                background: #f8f9fa;
+                border-top: 1px solid #e0e0e0;
             }
         </style>
     @endpush
 
     <div class="container py-5">
         <!-- Introduction -->
-        <div class="intro mb-8 text-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-8 px-6 rounded-2xl shadow-lg">
+        <div class="intro mb-5 text-center text-white py-5 px-4 rounded shadow-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
             <h1 class="display-5 fw-bold mb-3">
                 <span class="title-inline">
                     <i class="fas fa-plane text-warning"></i>
                     <span>SmartData Chat</span>
                 </span>
             </h1>
-            <p class="text-blue-100 text-lg max-w-2xl mx-auto">Ask about flights, baggage, check-in, or any travel-related queries with SmartFly's AI-powered assistant.</p>
+            <p class="text-light" style="max-width: 600px; margin: 0 auto;">Ask about flights, baggage, check-in, or any travel-related queries with SmartFly's AI-powered assistant.</p>
         </div>
 
         <!-- Chat Interface -->
         <div class="row g-4">
             <div class="col-12">
-                <div class="chat-container">
-                    <div class="chat-messages" id="chatMessages"></div>
+                <div class="smart-data-chat-container">
+                    <div class="chat-content">
+                        <div class="chat-messages" id="chatMessages" style="color: #2c3e50 !important;"></div>
+                        
+                        <!-- Typing Indicator -->
+                        <div class="typing-indicator" id="typingIndicator" style="display: none; color: #2c3e50 !important;">
+                            <span></span><span></span><span></span>
+                            <span>Smart assistant is typing...</span>
+                        </div>
 
-                    <!-- Typing Indicator -->
-                    <div class="typing-indicator" id="typingIndicator">
-                        <span></span><span></span><span></span>
+                        <div class="chat-input">
+                            <div class="input-container">
+                                <input type="text" id="chatInput" placeholder="اكتب سؤالك هنا...">
+                                <button id="sendBtn" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="chat-input">
-                        <input type="text" id="chatInput" placeholder="اكتب سؤالك هنا...">
-                        <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-
-                    <div class="quick-suggestions">
-                        <h4>اقتراحات سريعة:</h4>
-                        <div class="suggestions-grid" id="suggestionsGrid"></div>
-                    </div>
+                    
+                    <!-- Stats Display -->
+                    <div id="stats"></div>
                 </div>
             </div>
         </div>
@@ -327,11 +419,20 @@
                 const messageDiv = document.createElement('div');
                 messageDiv.className = `message ${sender === 'bot' || sender === 'ai' ? 'ai' : 'user'}`;
 
-                const bubbleDiv = document.createElement('div');
-                bubbleDiv.className = 'message-content';
-                bubbleDiv.innerHTML = message;
-
-                messageDiv.appendChild(bubbleDiv);
+                const content = document.createElement('div');
+                content.className = 'message-content';
+                
+                const header = document.createElement('div');
+                header.className = 'message-header';
+                header.innerHTML = sender === 'user' ? `<i class="fas fa-user"></i> You` : `<i class="fas fa-robot"></i> Smart Assistant`;
+                
+                const text = document.createElement('div');
+                text.className = 'message-text';
+                text.innerHTML = message;
+                
+                content.appendChild(header);
+                content.appendChild(text);
+                messageDiv.appendChild(content);
                 chatMessages.appendChild(messageDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
@@ -432,6 +533,16 @@
                 if (sendBtn) sendBtn.addEventListener('click', sendMessage);
 
                 updateStatsDisplay(); // initialize stats div
+                
+                // Add welcome message
+                const welcomeMessage = `Hello! I am the SmartFly assistant 🛩️
+I can help you with:
+• Searching for specific flights
+• Airline information
+• Website statistics
+• Travel tips
+• Any other questions`;
+                addMessage('ai', welcomeMessage);
             });
         </script>
     @endpush
