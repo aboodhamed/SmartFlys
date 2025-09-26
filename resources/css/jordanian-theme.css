@@ -8,8 +8,15 @@
   --primary-navy: #0f172a;      /* Deep Navy - Primary brand color */
   --accent-gold: #f59e0b;       /* Vibrant Gold - Accent and highlights */
   --soft-blue: #3b82f6;         /* Soft Blue - Secondary actions */
-  --light-gray: #f1f5f9;        /* Light Gray - Backgrounds */
-  --dark-gray: #475569;         /* Dark Gray - Text and details */
+  --light-gray: #f8f9fa;        /* Light Gray - Backgrounds */
+  --dark-gray: #2c3e50;         /* Dark Gray - Text and details */
+  
+  /* Chat and UI Colors */
+  --chat-bg: #f8f9fa;           /* Chat background */
+  --chat-text: #2c3e50;         /* Chat text color */
+  --chat-user-bg: #5a9a9c;      /* User message background */
+  --chat-user-text: #ffffff;    /* User message text */
+  --chat-border: #e9ecef;        /* Chat borders */
   
   /* Legacy support (mapped to new palette) */
   --jordan-royal: var(--primary-navy);
@@ -38,7 +45,7 @@
 body {
   background: var(--soft-gradient);
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--jordan-stone);
+  color: var(--chat-text);
   line-height: 1.6;
 }
 
@@ -88,7 +95,7 @@ body {
 
 /* Card headings and subtitles */
 .card h4 {
-  color: var(--jordan-royal);
+  color: var(--chat-text);
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
@@ -123,7 +130,7 @@ body {
 
 .btn-secondary {
   background: var(--jordan-cream);
-  color: var(--jordan-stone);
+  color: var(--chat-text);
   border: 2px solid var(--jordan-sage);
 }
 
@@ -181,7 +188,7 @@ a.btn:focus {
 }
 
 .form-label {
-  color: var(--jordan-royal);
+  color: var(--chat-text);
   font-weight: 600;
   margin-bottom: 8px;
   font-size: 14px;
@@ -212,7 +219,7 @@ a.btn:focus {
 
 /* تحسين العناوين */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--jordan-royal);
+  color: var(--chat-text);
   font-weight: 700;
   line-height: 1.3;
 }
@@ -272,7 +279,7 @@ hr {
 
 /* تحسين النصوص */
 .text-primary {
-  color: var(--jordan-royal) !important;
+  color: var(--chat-text) !important;
 }
 
 .text-success {
